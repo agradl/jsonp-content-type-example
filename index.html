@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>test</title>
+		<script type='text/javascript'>
+			window.onerror = function(e){
+				alert('Error caught: ' + e);
+			}
+			function jsonp(endpoint){
+			  	var script = document.createElement('script');
+			  	script.setAttribute('type','text/javascript');
+			    script.setAttribute('src','http://localhost:3000/' + endpoint);
+			    document.getElementsByTagName('head')[0].appendChild(script);
+			}
+		</script>
+	</head>
+	<body>
+		<div>
+			bad-jsonp (content/type:application/json): <button onclick="jsonp('bad-jsonp')">Send</button>
+		</div>
+		<div>
+			good-jsonp (content/type:application/javascript): <button onclick="jsonp('good-jsonp')">Send</button>
+		</div>
+	</body>
+</html>

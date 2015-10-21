@@ -1,0 +1,5 @@
+#!/bin/bash
+
+npm install
+open index.html
+node index.js
